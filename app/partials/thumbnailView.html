@@ -1,0 +1,26 @@
+<div ng-controller="mainController">
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="course in courses | orderBy:sortCondition | filter:searchTerm">
+      <div class="thumbnail">
+        <img class="img-responsive" ng-src="{{course.pic}}" style="width:300px" alt="..."/>
+        <div class="caption">
+          <h3>
+          <div class="h2" ng-bind="course.name"></div></h3>
+
+            <p>
+              <span ng-show="!showCompleteDescription" ng-bind="course.description | limitTo: 200"></span>
+              <span ng-show="showCompleteDescription" ng-bind="course.description"></span>
+              <span ng-show="course.description.length > maxLength && !showCompleteDescription">...</span>
+              <a href='' ng-show="course.description.length >
+                maxLength && !showCompleteDescription" ng-click="showCompleteDescription = true" >more
+              </a>
+            </p>
+            <p>
+              <a href="#" class="btn btn-primary" role="button">Button</a>
+              <a href="#" class="btn btn-default" role="button">Button</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
