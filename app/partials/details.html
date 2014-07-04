@@ -1,7 +1,7 @@
 
-  <div class="container" ng-controller="mainController">
+  <div class="container">
     <div class="row well desc">
-      <img class="col-md-3 img-responsive" ng-src="{{course.pic}}" />
+      <img class="col-md-12 img-responsive" ng-src="{{course.pic}}" />
       <div class="col-md-7">
         <strong><div class="h2" ng-bind="course.name"></div></strong>
       </div>
@@ -11,10 +11,7 @@
       </div>
       
       <div class="col-md-8" style="{float:right}">
-        <span ng-show="!showCompleteDescription" ng-bind="course.description | limitTo: 200"></span>
-        <span ng-show="showCompleteDescription" ng-bind="course.description"></span>
-        <span ng-show="course.description.length >maxLength && !showCompleteDescription">...</span>
-        <a href='' ng-show="course.description.length > maxLength && !showCompleteDescription" ng-click="showCompleteDescription = true" >more</a>
+        <span ng-bind="course.description"></span>
           
       </div>
     </div>

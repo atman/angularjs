@@ -11,3 +11,4 @@ angular.module('myApp.services', []).
 	maxDescriptionLength : 50,
 	maxResults : 3
 });
+//Adding the PARSE application keys for settings

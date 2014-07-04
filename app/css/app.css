@@ -3,7 +3,9 @@
   width: 70%;
   //float: right;
 }
-
+.row{
+  background-color: #FFFFFF;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
