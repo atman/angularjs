@@ -9,10 +9,34 @@
       <div class="col-md-2" style="float: right">
         <div class="h3" ng-bind="course.price | currency"></div>
       </div>
-      
-      <div class="col-md-8" style="{float:right}">
+
+      <div class="col-md-10" style="float:left">
         <span ng-bind="course.description"></span>
-          
       </div>
-    </div>
+
+      <div class="col-md-2" style="float:right">
+          <a href="#/addReview/{{course.id}}" class="btn btn-danger">Add Review</a>
+      </div>
+    </div> 
+
+      <div class="row well desc" ng-repeat="review in reviews"> 
+            
+          <div class="col-md-12" > 
+            <span class="h2" ng-bind="review.name"></span>
+          </div>
+
+          <div class="col-md-2"> 
+            <span class="h3" ng-bind="review.dateOfPost"></span>
+          </div>
+
+          <div class="col-md-8 ">
+            <span ng-bind="review.description"></span>
+          </div>
+
+
+          <div class="col-md-2"> 
+          <h3>Rating</h3><span><h2>{{review.rating}}/10 </h2></span>
+          </div>
+      </div>
   </div>
+

@@ -1,14 +1,17 @@
 angular.module('myApp.controllers')
-	.controller('detailsController',['$scope','settings','courseProvider','$routeParams',
-		function($scope,settings,courseProvider,$routeParams){
+	.controller('detailsController',['$scope','settings','courseProvider','$routeParams','reviewProvider',
+		function($scope,settings,courseProvider,$routeParams,reviewProvider){
 			var courseId = $routeParams.id;
 
-			var promise = courseProvider.getCourse(courseId);
+			$scope.course = courseProvider.getCourse(courseId);
+			$scope.reviews = reviewProvider.getReviews(courseId);
+			$scope.maxLength = settings.maxDescriptionLength;
+
+				/*var promise = courseProvider.getCourse(courseId);
 
 			promise.then(function(data){
 				$scope.course = data;
-			})
-
-			$scope.maxLength = settings.maxDescriptionLength;
+			})*/
+		    
 		}
 	]);

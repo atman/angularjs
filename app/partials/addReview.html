@@ -1,0 +1,42 @@
+<div class="container" ng-controller="addReviewController">
+
+<ng-form class="form-horizontal" name="addReviewForm" role="form">
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">User Name</label>
+      <div class="col-sm-4">
+        <input type="text" ng-model="review.name" class="form-control" placeholder="User Name "></div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Review</label>
+      <div class="col-sm-4">
+        <textarea type="text" class="form-control" rows="5" ng-model="review.description"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Today's Date</label>
+      <div class="col-sm-4">
+        <input type="date" class="form-control" placeholder="dd/mm/yyyy" ng-model="review.dateOfPost"></div>
+    </div>
+
+    <div class="form-group">
+         <label class="col-sm-2 control-label">Rating</label>
+         <div class="col-sm-2">
+            <select ng-model="review.rating" class="form-control">
+              <option value="{{rating.value}}" ng-repeat="rating in ratings">{{rating.value}}</option>
+            </select>
+        </div>
+      </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" ng-disabled="addReviewForm.$invalid" ng-click="addReview(review, addReviewForm)">Submit</button>
+      </div>
+    </div>
+  </ng-form>
+
+  <my-preview></my-preview>
+
+</div>
