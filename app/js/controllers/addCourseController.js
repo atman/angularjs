@@ -6,6 +6,8 @@ angular.module('myApp.controllers')
 				if (addCourseForm.$invalid) {
 					alert('validation failed');
 				} else {
+					var courses = courseProvider.getCourses();
+					course.id = courses.length+1;
 					courseProvider.addCourse(course);
 					$location.url('/listing');
 					console.log('saving course : ' + course.name);

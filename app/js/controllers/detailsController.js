@@ -6,6 +6,7 @@ angular.module('myApp.controllers')
 			$scope.course = courseProvider.getCourse(courseId);
 			$scope.reviews = reviewProvider.getReviews(courseId);
 			$scope.maxLength = settings.maxDescriptionLength;
+			$scope.avgRatings = courseProvider.getAvgRating();
 
 				/*var promise = courseProvider.getCourse(courseId);
 

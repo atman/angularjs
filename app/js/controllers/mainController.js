@@ -4,7 +4,10 @@ angular.module('myApp.controllers')
 
       $scope.maxLength = settings.maxDescriptionLength;
       $scope.maxResults = settings.maxResults;
+       $scope.avgRatings = courseProvider.getAvgRating();
       $scope.courses = courseProvider.getCourses();
-      
+
+
+
 	}
  ]); 

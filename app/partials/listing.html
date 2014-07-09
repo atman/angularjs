@@ -4,10 +4,14 @@
       
       <img class="col-md-3 img-responsive" ng-src="{{course.pic}}" />
       
-      <div class="col-md-7">
+      <div class="col-md-5">
         <strong><a ng-href="#/details/{{course.id}}"><div class="h2" ng-bind="course.name"></div></a></strong>
       </div>
-      
+
+      <div class="col-md-2">
+        <strong><div class="h3" >{{course.rating | number:0}}/10</div></strong>
+      </div>
+
       <div class="col-md-2" style="float: right">
         <div class="h3" ng-bind="course.price | currency"></div>
       </div>
