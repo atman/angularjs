@@ -9,6 +9,7 @@
 
       <div class="col-md-2">
         <strong><div class="h2" style="float: right">{{course.rating | number:2}}/10</div></strong>
+        
       </div>
       
       <div class="col-md-2" style="float: right">
@@ -17,33 +18,44 @@
 
       <div class="col-md-10" style="float:left">
 
-        <span ng-bind="course.description"></span>
+        <p style="text-align:justify" ng-bind="course.description"></p>
+        <my-progress-bar></my-progress-bar>
       </div>
 
       <div class="col-md-2" style="float:right">
           <a href="#/addReview/{{course.id}}" class="btn btn-danger">Add Review</a>
-          <span id="upvote">Useful</span><span id="downvote">Not</span>
       </div>
     </div> 
 
 
-      <div class="row well desc" ng-repeat="review in reviews | orderBy: '-dateOfPost'" > 
+      <div class="row well desc col-md-6" ng-repeat="review in reviews | orderBy: '-dateOfPost'" > 
             
-          <div class="col-md-5" > 
-            <span class="h3" ng-bind="review.name"></span>
-          </div>
-          <br><br>
-          <div class="col-md-2"> 
-            <span class="h4" ng-bind="review.dateOfPost | date: 'MM/dd/yyyy hh:mm:ss a'"></span>
+          <div class="row" >
+            <div class="col-md-3">
+              <span class="h3" ng-bind="review.name"></span>
+            </div>          
           </div>
 
-          <div class="col-md-8 ">
-            <span ng-bind="review.description"></span>
+          <br>
+          <div class="col-md-4"> 
+            <span class="h4" ng-bind="review.dateOfPost | date: 'MM/dd/yy hh:mm:ss a'"></span>
+           
+            <div> 
+              <h3>Rating</h3><span><h2 style:"">{{review.rating}}/10 </h2></span>
+              <button type="button" class="btn btn-success arrow"ng-click="review.helpfulCount = review.helpfulCount+1; review.totalCount = review.totalCount+1"><span class="glyphicon glyphicon-thumbs-up" ></span></button>
+              <br>
+
+              <button type="button" class="btn btn-danger arrow"  ng-click="review.negativeCount = review.negativeCount+1; review.totalCount = review.totalCount+1"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+              <p>{{review.helpfulCount}} people out of {{review.totalCount}} found this useful</p>
+            </div>
+            
           </div>
 
-          <div class="col-md-2"> 
-          <h3>Rating</h3><span><h2>{{review.rating}}/10 </h2></span>
+          <div class="row col-md-7 ">
+            <p style="text-align:justify"ng-bind="review.description"></p>
           </div>
+
+          
       </div>
   </div>
 

@@ -16,4 +16,10 @@ angular.module('myApp.directives', ['ngSanitize']).
   				previewContent: '='
   			}
   		}
-  	});
+  	})
+  .directive('myProgressBar',function(){
+ return{
+   restrict:'E',
+   templateUrl:'partials/progressBar.html'
+ }
+});

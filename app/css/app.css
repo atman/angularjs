@@ -35,6 +35,39 @@
   padding: 0;
 }
 
+.arrow{
+ 
+  width: 4em;
+  height: 4em;
+  font-size: 12px;
+  border-radius: 3em;
+  text-align: center;
+  padding: 0px;
+  float: left;
+  display: inline-block;
+
+}
+
+.btn:click{
+  border-style: none;
+}
+
+.progress-bar {
+  background-color: red;
+
+}
+
+.progress{
+  height: 2em;
+}
+
+.arrow.upmod { 
+  background: url(%%upvote%%) 0 0; 
+} 
+.arrow.downmod { 
+  background: url(%%downvote%%) 0 0; 
+} 
+
 
 
 
