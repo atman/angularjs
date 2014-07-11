@@ -36,32 +36,10 @@
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                <li>
-                  <a href="#">Best Of</a>
+                  <a href="#/thumbnailView">Thumbnail View </a>
                </li>
                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                     Courses
-                     <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" role="menu">
-                     <li>
-                        <a href="#">Action</a>
-                     </li>
-                     <li>
-                        <a href="#">Another action</a>
-                     </li>
-                     <li>
-                        <a href="#">Something else here</a>
-                     </li>
-                     <li class="divider"></li>
-                     <li>
-                        <a href="#">Separated link</a>
-                     </li>
-                     <li class="divider"></li>
-                     <li>
-                        <a href="#">One more separated link</a>
-                     </li>
-                  </ul>
+                  <a href="#/listing">Listing </a>
                </li>
 
             </ul>
@@ -69,46 +47,29 @@
             <form class="navbar-form navbar-left" role="search">
                <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search" ng-model="searchTerm"></div>
-               <button type="submit" class="btn btn-info" style="">Submit</button>
+               
             </form>
-            <ul class="nav navbar-nav" style="">
-              <select class="form-control col-md-2" ng-model="sortCondition" default="Sort By">
-                  <option value="name" selected>Name</option>
-                  <option value="price">Price</option>
-                  <option value="rating">Rating</option>
-               </select>
-               <a href="" ng-click="reverse=!reverse">Ascending Toggle</a>
-            </ul>   
+               <div class="btn-group sort">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                  Sort By <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                  <li><a href="#" ng-click="sortCondition='price';reverse=!reverse">Price</a></li>
+                  <li><a href="#" ng-click="sortCondition='name';reverse=!reverse">Name</a></li>
+                  <li><a href="#" ng-click="sortCondition='rating';reverse=!reverse">Rating</a></li>
+                  </ul>
+               </div>
+             
             <ul class="nav navbar-nav navbar-right">
                <li>
                   <a href="#/addCourse">Add new Course</a>
-               </li>
-               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                     Dropdown
-                     <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" role="menu">
-                     <li>
-                        <a href="#" >Action</a>
-                     </li>
-                     <li>
-                        <a href="#">Another action</a>
-                     </li>
-                     <li>
-                        <a href="#">Something else here</a>
-                     </li>
-                     <li class="divider"></li>
-                     <li>
-                        <a href="#">Separated link</a>
-                     </li>
-                  </ul>
                </li>
             </ul>
          </div>
          <!-- /.navbar-collapse --> </div>
       <!-- /.container-fluid --> </nav>
 
+   <!--To change views without loading the page again-->
    <ng-view></ng-view>
    <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

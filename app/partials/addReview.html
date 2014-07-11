@@ -23,17 +23,17 @@ textarea.ng-dirty.ng-valid{
 
 </style>
 
-<div class="container" ng-controller="addReviewController">
+<div class="container addingData" ng-controller="addReviewController">
 
-<ng-form class="form-horizontal" name="addReviewForm" role="form">
+<ng-form class="form-horizontal " name="addReviewForm" role="form">
 
-    <div class="form-group">
+    <div class="form-group go-right">
       <label class="col-sm-2 control-label">User Name</label>
       <div class="col-sm-4">
         <input type="text" required ng-model="review.name" maxlength="20" class="form-control user" placeholder="User Name "></div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group go-right">
       <label class="col-sm-2 control-label">Review</label>
       <div class="col-sm-4">
         <textarea type="text" placeholder="Enter your Review here!" required class="form-control" rows="5" ng-model="review.description"></textarea>

@@ -1,28 +1,32 @@
 
   <div class="container" ng-controller="mainController">
-    <div class="row well desc" ng-repeat="course in courses | orderBy:sortCondition:reverse | filter:searchTerm" >
-     <a href="" ng-click="reverse=!reverse">Ascending Toggle</a>
+    <div class="row well list" ng-repeat="course in courses | orderBy:sortCondition:reverse | filter:searchTerm" > 
+      <a ng-href="#/details/{{course.id}}">
+      <img class="col-md-4 img-responsive" ng-src="{{course.pic}}" />
+      <!--<div id="courseImgList" class="responsive" ng-style="course.pic != '' &&{'background-image':'url('+course.pic+')' }"></div>-->
       
-      <img class="col-md-3 img-responsive" ng-src="{{course.pic}}" />
-      
-      <div class="col-md-5">
-        <strong><a ng-href="#/details/{{course.id}}"><div class="h2" ng-bind="course.name"></div></a></strong>
+      <div class="col-md-6">
+        <strong><a ng-href="#/details/{{course.id}}"><span class="h3" ng-bind="course.name"></span></a></strong>
+
       </div>
 
-      <div class="col-md-2">
-        <strong><div class="h3" >{{course.rating | number:0}}/10</div></strong>
+      <div class="col-md-4">
+        <strong><div class="h3" style="float:left">{{course.rating | number:1}}/10</div></strong>
+
       </div>
 
       <div class="col-md-2" style="float: right">
-        <div class="h3" ng-bind="course.price | currency"></div>
+        <div class="h2" ng-bind="course.price | currency"></div>
       </div>
-      
+    </a>
       <div class="col-md-8" style="{float:right}">
         <span ng-show="!showCompleteDescription" ng-bind="course.description | limitTo: 200"></span>
         <span ng-show="showCompleteDescription" ng-bind="course.description"></span>
         <span ng-show="course.description.length >maxLength && !showCompleteDescription">...</span>
         <a href='' ng-show="course.description.length > maxLength && !showCompleteDescription" ng-click="showCompleteDescription = true" >more</a>
-          
+       <br><br><br>
       </div>
+      
     </div>
+
   </div>

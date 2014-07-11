@@ -1,7 +1,19 @@
 /* app css stylesheet */
+.sort{
+  margin: 10px;
+}
 .container{
-  width: 65%;
+  width: 75%;
 
+}
+.addingData{
+  width: 85%;
+  margin: auto;
+  margin-top: 5%;
+}
+a:hover{
+  text-decoration: none;
+  color: black;  
 }
 .row{
   background-color: #FFFFFF;
@@ -34,7 +46,10 @@
   content: "";
   padding: 0;
 }
-
+.well{
+  margin-bottom: 10px;
+  padding: 0px;
+}
 .arrow{
  
   width: 4em;
@@ -48,17 +63,55 @@
 
 }
 
+#courseImg
+{
+    background: no-repeat center center; 
+    width: 100%;
+    height: 400px;
+    margin-bottom: 5%;
+}
+
+#courseImgList
+{
+    background: no-repeat center center; 
+    width: 100%;
+    height: 400px;
+    margin-bottom: 3%;
+}
+#courseImgThumb
+{
+    background: no-repeat center center; 
+    width: 300px;
+    height: 300px;
+    margin-bottom: 5%;
+}
+
+.thumbs{
+  height: 700px;
+ -webkit-transition: all .1s ease-in-out;
+
+}
+
+.thumbs:hover {
+ -webkit-transform: scale(1.1);
+}
+ .profile{
+    border-radius: 20%;
+ }
 .btn:click{
   border-style: none;
 }
 
 .progress-bar {
-  background-color: red;
-
+  background-color: #3B3;
 }
-
+.progress .progress-bar{
+  line-height: 2em;
+  font-size: 1em;
+}
 .progress{
   height: 2em;
+  background-color: black;
 }
 
 .arrow.upmod { 
@@ -68,6 +121,9 @@
   background: url(%%downvote%%) 0 0; 
 } 
 
-
-
-
+.list{
+  -webkit-transition: all .1s ease-in-out;
+}
+.list:hover{
+   -webkit-transform: scale(1.1);
+}

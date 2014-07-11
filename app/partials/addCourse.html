@@ -1,3 +1,27 @@
+<style type="text/css">
+  input.user.ng-dirty.ng-invalid{
+  background-color: pink;
+  color: black;
+}
+
+input.user.ng-dirty.ng-valid{
+  background-color: #009933;
+  color: white;
+}
+
+textarea.ng-dirty.ng-invalid{
+  background-color: pink;
+  color: black;
+}
+
+textarea.ng-dirty.ng-valid{
+  background-color: #009933;
+  color: white;
+}
+
+
+</style>
+
 <div class="container" ng-controller="addCourseController">
 
 <ng-form class="form-horizontal" name="addCourseForm" role="form">
@@ -5,37 +29,37 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">Course Name</label>
       <div class="col-sm-4">
-        <input type="text" ng-model="course.name" class="form-control" placeholder="Course Name "></div>
+        <input type="text" required ng-model="course.name" class="form-control user" placeholder="Course Name "></div>
     </div>
 
     <div class="form-group">
       <label class="col-sm-2 control-label">Price</label>
       <div class="col-sm-2">
-        <input type="number" class="form-control" placeholder="Price" ng-model="course.price"></div>
+        <input type="number" min="0" required class="form-control user" placeholder="Price" ng-model="course.price"></div>
     </div>
 
     <div class="form-group">
       <label class="col-sm-2 control-label">Image URL</label>
       <div class="col-sm-4">
-        <input type="url" class="form-control" placeholder="Paste Image URL here" ng-model="course.pic"></div>
+        <input type="url" required class="form-control" placeholder="Paste Image URL here" ng-model="course.pic"></div>
     </div>
 
     <div class="form-group">
       <label class="col-sm-2 control-label">Start Date</label>
       <div class="col-sm-4">
-        <input type="date" class="form-control" placeholder="dd/mm/yyyy" ng-model="course.date"></div>
+        <input type="date" required class="form-control" placeholder="dd/mm/yyyy" ng-model="course.date"></div>
     </div>
 
     <div class="form-group">
       <label class="col-sm-2 control-label">Description</label>
       <div class="col-sm-4">
-        <textarea type="text" class="form-control" rows="5" ng-model="course.description"></textarea>
+        <textarea type="text" required class="form-control user" rows="5" ng-model="course.description"></textarea>
       </div>
     </div>
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success" ng-disabled="addCourseForm.$invalid" ng-click="addCourse(course, addCourseForm)">Sign in</button>
+        <button type="submit" class="btn btn-success" ng-disabled="addCourseForm.$invalid" ng-click="addCourse(course, addCourseForm)">Post Course</button>
       </div>
     </div>
   </ng-form>

@@ -1,61 +1,71 @@
 
   <div class="container">
+    <!--*****************************************COURSE DETAILS*****************************************-->
+    
     <div class="row well desc">
-      <img class="col-md-12 img-responsive" row="5" ng-src="{{course.pic}}" />
-      <div class="col-md-7">
-        <strong><div class="h2" ng-bind="course.name"></div></strong>
-        
-      </div>
-
-      <div class="col-md-2">
-        <strong><div class="h2" style="float: right">{{course.rating | number:2}}/10</div></strong>
-        
-      </div>
+    <!--<img class="img-responsive" row="4" ng-src="{{course.pic}}" />-->
+    <a href="{{course.pic}}"><div id="courseImg" class="responsive" ng-style="course.pic != '' &&{'background-image':'url('+course.pic+')' }"></div></a>
+      <div class="row well">
+        <div class="col-md-7">
+          <strong><div class="h2 course-name" ng-bind="course.name"></div></strong>  
+        </div>
       
-      <div class="col-md-2" style="float: right">
-        <div class="h3" ng-bind="course.price | currency"></div>
+        <div class="col-md-3">
+          <strong><div class="h2" style="">{{course.rating | number:1}}/10</div></strong>
+          <div>Based on {{course.noOfReviews}} Reviews</div>  
+        </div>
+      
+        <div class="col-md-2" style="float: right">
+          <div class="h3" ng-bind="course.price | currency"></div>
+        </div>
       </div>
 
-      <div class="col-md-10" style="float:left">
+      <div class="row well desc">
+        <div class="col-md-10" style="float:left">
+          <p style="text-align:justify" ng-bind="course.description"></p>
+          <my-progress-bar></my-progress-bar>
+        </div>
 
-        <p style="text-align:justify" ng-bind="course.description"></p>
-        <my-progress-bar></my-progress-bar>
-      </div>
-
-      <div class="col-md-2" style="float:right">
+        <div class="col-md-2" style="float:right">
           <a href="#/addReview/{{course.id}}" class="btn btn-danger">Add Review</a>
+          <p>Start Date <h2>{{course.startDate | date:'longDate'}}</h2> </p>
+        </div>
       </div>
     </div> 
 
+    <!--*************************************END OF COURSE DETAILS**************************************-->
 
-      <div class="row well desc col-md-6" ng-repeat="review in reviews | orderBy: '-dateOfPost'" > 
+    <!--*****************************************COURSE REVIEWS*****************************************-->
+      <div class="row well desc col-md-12" ng-repeat="review in reviews | orderBy: '-dateOfPost'" > 
             
           <div class="row" >
-            <div class="col-md-3">
+            <div class="col-md-8">
+              <img class="responsive col-xs-3 profile" src="img/default.jpg"/>
               <span class="h3" ng-bind="review.name"></span>
             </div>          
           </div>
 
           <br>
-          <div class="col-md-4"> 
+          <div class="col-md-2"> 
             <span class="h4" ng-bind="review.dateOfPost | date: 'MM/dd/yy hh:mm:ss a'"></span>
            
             <div> 
               <h3>Rating</h3><span><h2 style:"">{{review.rating}}/10 </h2></span>
-              <button type="button" class="btn btn-success arrow"ng-click="review.helpfulCount = review.helpfulCount+1; review.totalCount = review.totalCount+1"><span class="glyphicon glyphicon-thumbs-up" ></span></button>
+              
+              <button type="button" class="btn btn-success arrow"ng-click="review.helpfulCount = review.helpfulCount+1; review.totalCount = review.totalCount+1;"><span class="glyphicon glyphicon-thumbs-up" ></span></button>
               <br>
 
               <button type="button" class="btn btn-danger arrow"  ng-click="review.negativeCount = review.negativeCount+1; review.totalCount = review.totalCount+1"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-              <p>{{review.helpfulCount}} people out of {{review.totalCount}} found this useful</p>
+              <br><br>
+              <p style="font-size:0.85em">{{review.helpfulCount}} people out of {{review.totalCount}} found this useful</p>
             </div>
             
           </div>
 
           <div class="row col-md-7 ">
-            <p style="text-align:justify"ng-bind="review.description"></p>
+            <p style="text-align:justify; margin-top:0px"ng-bind="review.description"></p>
           </div>
-
-          
       </div>
+      <!--*****************************************END OF COURSE REVIEWS***************************************-->
   </div>
 

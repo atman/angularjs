@@ -1,11 +1,11 @@
 angular.module('myApp.services')	
 	.factory('reviewProvider', [function(){
-
+		//Static data
 		var reviews  = [{
 
 				id:1,
 				name: 'Atman',
-				description: 'An introduction to the theory and practice of computer programming, the emphasis of this course is on techniques of program development within the object-oriented paradigm. Topics include control structures, objects, classes, inheritance, simple data structures, and basic concepts of software development. Currently, Java is the programming language used in the course. This course has a required lab component, and is required for the major and minor in computer science. (Offered every semester)',
+				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare id augue ac vulputate. Vivamus laoreet viverra dignissim. Ut molestie varius tellus, in tincidunt ante porttitor nec. Cras accumsan massa a turpis sodales consequat. Phasellus accumsan neque nec massa placerat viverra. Integer consectetur bibendum rutrum. Nunc mauris diam, porta in auctor volutpat, rutrum at nisi. Curabitur posuere vulputate tellus, eget imperdiet ligula tincidunt ut. Pellentesque vitae urna ut augue accumsan egestas a eu orci. Phasellus placerat libero vitae ipsum dapibus tincidunt.',
 				rating: 10,
 				dateOfPost: "",
 				helpfulCount: 0,
@@ -14,37 +14,94 @@ angular.module('myApp.services')
 			{
 				id:1,
 				name: 'Batman',
-				description: 'An introduction to the theory and practice of computer programming, the emphasis of this course is on techniques of program development within the object-oriented paradigm. Topics include control structures, objects, classes, inheritance, simple data structures, and basic concepts of software development. Currently, Java is the programming language used in the course. This course has a required lab component, and is required for the major and minor in computer science. (Offered every semester)',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
 				rating: 8,
 				dateOfPost: "",
 				helpfulCount: 0,
-				negativeCOunt:0,
+				negativeCount:0,
 				totalCount: 0
 			}, 
 			{
 				id:2,
 				name: 'Batman',
-				description: 'This course continues the study of data structures and algorithms, focusing on algorithm design and analysis and the relationships between data representation, algorithm design, and program efficiency. Topics include advanced data structures, key algorithm design techniques, analysis of the time and space requirements of algorithms, and characterizing the difficulty of solving a problem. Concrete examples will be drawn from a variety of domains, such as algorithms for graphs and networks, cryptography, data compression, strings, geometric problems, indexing and search, numerical problems, and parallel computation. This course is required for the major in computer science. Prerequisites: CPSC 225; CPSC 229 is recommended. (Offered annually)',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
 				rating: 4,
 				dateOfPost: "",
 				helpfulCount: 0,
-				negativeCOunt:0,
+				negativeCount:0,
 				totalCount: 0
 			}, 
+			{
+				id:3,
+				name: 'Catman',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
+				rating: 8,
+				dateOfPost: "",
+				helpfulCount: 0,
+				negativeCount:0,
+				totalCount: 0
+			}, 
+			{
+				id:4,
+				name: 'Fatman',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
+				rating: 6,
+				dateOfPost: "",
+				helpfulCount: 0,
+				negativeCount:0,
+				totalCount: 0
+			}, 
+			{
+				id:5,
+				name: 'Hatman',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
+				rating: 6,
+				dateOfPost: "",
+				helpfulCount: 0,
+				negativeCount:0,
+				totalCount: 0
+			}, 
+			{
+				id:6,
+				name: 'Matman',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
+				rating: 9,
+				dateOfPost: "",
+				helpfulCount: 0,
+				negativeCount:0,
+				totalCount: 0
+			}, 
+			{
+				id:7,
+				name: 'Patman',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
+				rating: 10,
+				dateOfPost: "",
+				helpfulCount: 0,
+				negativeCount:0,
+				totalCount: 0
+			}, 
+			{
+				id:3,
+				name: 'Batman',
+				description: 'Vestibulum quis eros ultrices, gravida sapien id, pharetra sem. Ut sit amet congue dolor, et consequat mauris. Integer eu posuere lorem. Curabitur luctus vel ligula non elementum. Nullam sagittis posuere mauris, vitae rhoncus neque tristique varius. Praesent porttitor vehicula scelerisque. Vivamus gravida velit eget facilisis euismod. Vivamus in egestas lorem. Ut lobortis semper nisl, pretium aliquet turpis convallis sollicitudin',
+				rating: 8,
+				dateOfPost: "",
+				helpfulCount: 0,
+				negativeCount:0,
+				totalCount: 0
+			} 
 			]
 
-		reviews[0].dateOfPost = new Date();
-		reviews[1].dateOfPost = new Date();
+			//Set default date of static review to current date 
+			for(var i=0;i<9;i++){
+				reviews[i].dateOfPost = new Date();
+			}
 
-
-		//function getCourses(){
-			//return courses;
-		//	  return courses;
-		//}
-	
+		//Return reviews for a course by matching course ID
 		function getReviews(id) {
 			var targetReview = [];
-		
+			
 			angular.forEach(reviews, function(item, index) {
 				if (item.id == id) {
 					targetReview.push(item);
@@ -54,11 +111,12 @@ angular.module('myApp.services')
 			return targetReview;
 		}
 
-		function updateHelpfulCount(review){
+		/*function updateHelpfulCount(review){
 
 			return review;
-		}
+		}*/
 
+		//Add new review to the array
 		function addReview(review){
 			reviews.push(review);
 		};
