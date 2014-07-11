@@ -17,6 +17,10 @@ config(['$routeProvider',
 			templateUrl:'partials/details.html',
 			controller: 'detailsController'
 		});
+		$routeProvider.when('/addReview/:id',{
+			templateUrl:'partials/addReview.html',
+			controller: 'addReviewController'
+		});
 		$routeProvider.otherwise({
 			redirectTo: '/listing'
 		});

@@ -1,26 +1,31 @@
 <div ng-controller="mainController">
+  <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="course in courses | orderBy:sortCondition | filter:searchTerm">
-      <div class="thumbnail">
-        <img class="img-responsive" ng-src="{{course.pic}}" style="width:300px" alt="..."/>
+    <div class="col-sm-6 col-md-4 thumbs" style="float:left" ng-repeat="course in courses | orderBy:sortCondition | filter:searchTerm">
+      <div class="thumbnail" >
+        <a ng-href="#/details/{{course.id}}">
+        <div id="courseImgThumb" class="responsive" ng-style="course.pic != '' &&{'background-image':'url('+course.pic+')' }"></div>
+        <!--<img class="responsive" ng-src="{{course.pic}}" style="width:300px;height:300px" alt="..."/>-->
         <div class="caption">
-          <h3>
-          <div class="h2" ng-bind="course.name"></div></h3>
-
+        
+            <div class="h4" ng-bind="course.name"></div>
+        </a>
+          
+          <my-progress-bar></my-progress-bar>
             <p>
               <span ng-show="!showCompleteDescription" ng-bind="course.description | limitTo: 200"></span>
               <span ng-show="showCompleteDescription" ng-bind="course.description"></span>
               <span ng-show="course.description.length > maxLength && !showCompleteDescription">...</span>
               <a href='' ng-show="course.description.length >
-                maxLength && !showCompleteDescription" ng-click="showCompleteDescription = true" >more
+                maxLength && !showCompleteDescription" ng-click="showCompleteDescription = true" ><a ng-href="#/details/{{course.id}}">more</a>
               </a>
             </p>
             <p>
-              <a href="#" class="btn btn-primary" role="button">Button</a>
-              <a href="#" class="btn btn-default" role="button">Button</a>
+              
             </p>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
